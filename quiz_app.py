@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from gtts import gTTS
+import gTTS
 import os
 import random
 import tempfile
