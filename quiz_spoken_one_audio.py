@@ -14,7 +14,7 @@ def create_tts_mp3(text):
     tts.write_to_fp(mp3_fp)
     return mp3_fp.getvalue()
 
-def herhaal:
+def herhaal():
     # Simuleer stilte met herhaling van "uh"
     text = "Ik herhaal:"
     return create_tts_mp3(text)
