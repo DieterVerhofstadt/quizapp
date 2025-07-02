@@ -1,45 +1,43 @@
 import csv
 import random
 from gtts import gTTS
-from pydub import AudioSegment
 import streamlit as st
-import tempfile
+import io
+import time
 
-st.title("Audio Quiz")
+st.title("Audioquiz – alle vragen in één fragment")
 
-if st.button("Genereer quiz en speel af"):
-    # Lees vragen in
+def create_tts_mp3(text):
+    mp3_fp = io.BytesIO()
+    tts = gTTS(text=text, lang='nl')
+    tts.write_to_fp(mp3_fp)
+    return mp3_fp.getvalue()
+
+def create_silence(duration_ms=5000):
+    # 5 seconden stilte als lege MP3 – workaround: gebruik een stil stukje van TTS
+    silent_text = "."  # gTTS maakt hiervan een korte pauze
+    mp3_data = create_tts_mp3(silent_text)
+    return mp3_data
+
+if st.button("Start quiz"):
     with open('vragen.csv', newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         vragenlijst = list(reader)
 
     random.shuffle(vragenlijst)
 
-    quiz_audio = AudioSegment.empty()
-    stilte = AudioSegment.silent(duration=5000)  # 5 seconden stilte
+    combined_mp3 = b""
 
-    for i, rij in enumerate(vragenlijst):
+    for rij in vragenlijst:
         vraag = rij['vraag']
         antwoord = rij['antwoord']
 
-        # Vraag en antwoord genereren met gTTS
-        tts_vraag = gTTS(text=vraag, lang='nl')
-        tts_antwoord = gTTS(text=antwoord, lang='nl')
+        vraag_audio = create_tts_mp3(vraag)
+        stilte = create_silence()
+        antwoord_audio = create_tts_mp3(antwoord)
 
-        # Tijdelijke opslag om te laden met pydub
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmp_vraag_file, \
-             tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmp_antwoord_file:
+        combined_mp3 += vraag_audio + stilte + antwoord_audio + stilte
 
-            tts_vraag.save(tmp_vraag_file.name)
-            tts_antwoord.save(tmp_antwoord_file.name)
+    st.audio(io.BytesIO(combined_mp3), format="audio/mp3")
 
-            vraag_audio = AudioSegment.from_file(tmp_vraag_file.name)
-            antwoord_audio = AudioSegment.from_file(tmp_antwoord_file.name)
-
-            # Voeg toe aan quiz audio
-            quiz_audio += vraag_audio + stilte + antwoord_audio + stilte
-
-    # Exporteer gecombineerde quiz
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmp_quiz:
-        quiz_audio.export(tmp_quiz.name, format="mp3")
-        st.audio(tmp_quiz.name, format="audio/mp3", start_time=0)
+    st.download_button("Download mp3", data=combined_mp3, file_name="quiz.mp3", mime="audio/mpeg")
