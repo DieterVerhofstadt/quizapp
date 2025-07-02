@@ -8,7 +8,7 @@ st.title("Audioquiz – alle vragen in één fragment")
 
 def create_tts_mp3(text):
     if not text.strip():
-        text = "Terwijl jij nadenkt over het antwoord op deze vraag, praat ik alvast lekker door, want de applicatie geeft geen stilte"  # fallback bij lege tekst
+        text = "Simulatie van stilte"  # fallback bij lege tekst
     mp3_fp = io.BytesIO()
     tts = gTTS(text=text, lang='nl')
     tts.write_to_fp(mp3_fp)
@@ -16,7 +16,7 @@ def create_tts_mp3(text):
 
 def create_silence(duration=5):
     # Simuleer stilte met herhaling van "uh"
-    text = " ".join(["Terwijl jij nadenkt over het antwoord op deze vraag, praat ik alvast lekker door, want de applicatie geeft geen stilte"] * duration)
+    text = " ".join(["Simulatie van stilte"] * duration)
     return create_tts_mp3(text)
 
 if st.button("Start quiz"):
