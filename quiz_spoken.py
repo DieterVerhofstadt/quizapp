@@ -5,8 +5,6 @@ from gtts import gTTS
 import streamlit as st
 import os
 
-engine = pyttsx3.init()
-
 with open('vragenENG.csv', newline='', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile)
     vragenlijst = list(reader)  # maak er een lijst van
