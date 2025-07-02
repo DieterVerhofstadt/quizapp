@@ -1,16 +1,19 @@
-This project has the main goal of building an app that I can use myself, specifically when driving, as a way to rehearse trivia questions.
-The source file is "vragenENG.csv" which contains all questions and answers with "vraag,antwoord" as the key value pair.
-The main program is (currently) quiz_spoken.py which intends to
-- randomly pick a question from the csv
-- convert the text into speech, and read the question out loud
-- wait 5 seconds
-- and then read the answer out loud
-- moving to the next random question after 2 more seconds
-This will allow me to think of the answer and then have it checked by hearing the answer.
+This project has the main goal of building an app that I can use myself, specifically when driving, as a way to rehearse trivia questions. What I want is
+- an automatic queue of randomized questions
+- read out loud
+- with some time in between so I can think of the answer
+- then getting the answer read out loud
+
 Key features are:
 - the randomization (else I will remember the sequence of answers)
 - the automatic queue (else I have to manipulate my device while driving)
 I built the application as a "vibe coding" experiment, following instructions by ChatGPT. I have a fair understanding of the end result but I have a hard time debugging or improving.
+
+Structure:
+- The source file is "vragenENG.csv" which contains all questions and answers with "vraag,antwoord" as the key value pair.
+- The main program is (currently) quiz_spoken.py
+- Two auxiliary files are config.toml and requirements.txt
+- there are other files with questions in Dutch or different approaches to the main program
 
 Problems:
 - the current version of the app does not queue the questions but puts clickable mp3s into the browser
