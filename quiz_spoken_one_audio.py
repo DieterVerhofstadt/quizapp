@@ -34,7 +34,8 @@ if st.button("Start quiz"):
         vraag_audio = create_tts_mp3(vraag)
         herhaal = create_tts_mp3("Ik herhaal")
         antwoord_audio = create_tts_mp3(antwoord)
-        combined_mp3 += vraag_audio + herhaal + vraag_audio + antwoord_audio
+        volgende = create_tts_mp3("Volgende vraag")
+        combined_mp3 += vraag_audio + herhaal + vraag_audio + antwoord_audio + volgende
 
     st.audio(io.BytesIO(combined_mp3), format="audio/mp3")
     st.download_button("Download mp3", data=combined_mp3, file_name="quiz.mp3", mime="audio/mpeg")
