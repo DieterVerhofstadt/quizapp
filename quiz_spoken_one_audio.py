@@ -24,7 +24,7 @@ if st.button("Start quiz"):
         reader = csv.DictReader(csvfile)
         vragenlijst = list(reader)
 
-   random_10_vragen = random.sample(vragenlijst, 10)
+    random_10_vragen = random.sample(vragenlijst, 10)
 
     combined_mp3 = b""
 
