@@ -4,7 +4,7 @@ from gtts import gTTS
 import streamlit as st
 import io
 
-st.title("Audioquiz – alle vragen in één fragment")
+st.title("Audioquiz – tien vragen op een rij")
 
 def create_tts_mp3(text):
     if not text.strip():
