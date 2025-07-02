@@ -3,62 +3,26 @@ import random
 from gtts import gTTS
 import streamlit as st
 import os
-import atexit
+import time
 
-# Maak mp3-bestanden en geef de lijst terug
-def generate_audio_files():
-    with open('vragenENG.csv', newline='', encoding='utf-8') as csvfile:
-        reader = csv.DictReader(csvfile)
-        vragenlijst = list(reader)
+with open('vragen.csv', newline='', encoding='utf-8') as csvfile:
+    reader = csv.DictReader(csvfile)
+    vragenlijst = list(reader)  # maak er een lijst van
 
-    random.shuffle(vragenlijst)
+random.shuffle(vragenlijst)  # schud de lijst door elkaar
 
-    audio_files = []
-    os.makedirs("static", exist_ok=True)
+for i, rij in enumerate(vragenlijst):
+    vraag = rij['vraag']
+    antwoord = rij['antwoord']
 
-    for i, rij in enumerate(vragenlijst):
-        vraag = rij['vraag']
-        antwoord = rij['antwoord']
+    tts_vraag = gTTS(text=vraag, lang='nl')
+    vraag_file = f"vraag_{i}.mp3"
+    tts_vraag.save(vraag_file)
+    st.audio(vraag_file, format='audio/mp3')
 
-        vraag_file = f"static/vraag_{i}.mp3"
-        antwoord_file = f"static/antwoord_{i}.mp3"
+    time.sleep(5)  # wacht 5 seconden
 
-        gTTS(text=vraag, lang='nl').save(vraag_file)
-        gTTS(text=antwoord, lang='nl').save(antwoord_file)
-
-        audio_files.append(vraag_file)
-        audio_files.append(antwoord_file)
-
-    return audio_files
-
-if "audio_files" not in st.session_state:
-    st.session_state.audio_files = generate_audio_files()
-
-audio_html = """
-<audio id="audioPlayer" src="{src}" autoplay></audio>
-<script>
-  const files = {files};
-  let index = 0;
-  const player = document.getElementById("audioPlayer");
-  player.onended = () => {
-    index++;
-    if (index < files.length) {
-      player.src = files[index];
-      player.play();
-    }
-  };
-</script>
-"""
-
-# URLs voor Streamlit Cloud moeten naar /static/ map wijzen
-files_url = [f"/{file}" for file in st.session_state.audio_files]
-first_file = files_url[0]
-
-st.markdown(audio_html.format(src=first_file, files=files_url), unsafe_allow_html=True)
-
-# Optioneel: opschonen van mp3 bestanden bij afsluiten
-@atexit.register
-def cleanup():
-    for file in st.session_state.audio_files:
-        if os.path.exists(file):
-            os.remove(file)
+    tts_antwoord = gTTS(text=antwoord, lang='nl')
+    antwoord_file = f"antwoord_{i}.mp3"
+    tts_antwoord.save(antwoord_file)
+    st.audio(antwoord_file, format='audio/mp3')
