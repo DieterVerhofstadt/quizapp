@@ -16,7 +16,7 @@ Structure:
 - there are other files with questions in Dutch or different approaches to the main program
 
 Problems:
-- the current version of the app does not queue the questions but puts clickable mp3s into the browser
+- the first version of the app does not queue the questions but puts clickable mp3s into the browser; after some investigation, it turned out that streamlit.clout doesn't support an automatic queue of generated audio; I changed the program to produce 1 mp3 of a randomized order of the questions
 - the local program I have, quizvoorgelezenENG, does the queuing but on my laptop it doesn't activate Dutch text-to-speech
 
 Nice to haves:
