@@ -15,7 +15,7 @@ def create_tts_mp3(text):
     return mp3_fp.getvalue()
 
 pauze = '<speak>Pauze<break time="5000ms"/>, Einde pauxe.</speak>'  
-pauze_audio = gTTS(text=pauze, lang='nl', tld='com', ssml=True) 
+pauze_audio = gTTS(text=pauze, lang='nl', tld='com') 
 
 if st.button("Start quiz"):
     with open('vragen.csv', newline='', encoding='utf-8') as csvfile:
