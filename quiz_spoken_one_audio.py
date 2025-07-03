@@ -14,7 +14,7 @@ def create_tts_mp3(text):
     tts.write_to_fp(mp3_fp)
     return mp3_fp.getvalue()
 
-def pauze()
+def pauze():
     pauze = '<speak>Pauze<break time="5000ms"/>, Einde pauxe.</speak>'  
     tts = gTTS(text=pauze, lang='nl', tld='com') 
     tts.write_to_fp(mp3_fp)
