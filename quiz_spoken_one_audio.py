@@ -7,8 +7,6 @@ import io
 st.title("Audioquiz – tien vragen op een rij")
 
 def create_tts_mp3(text):
-    if not text.strip():
-        text = "Ik herhaal:"  # fallback bij lege tekst
     mp3_fp = io.BytesIO()
     tts = gTTS(text=text, lang='nl')
     tts.write_to_fp(mp3_fp)
@@ -16,6 +14,7 @@ def create_tts_mp3(text):
 
 def pauze():
     text = '<speak>Pauze<break time="5000ms"/>, Einde pauze.</speak>'  
+    mp3_fp = io.BytesIO()
     tts = gTTS(text=text, lang='nl', tld='com') 
     tts.write_to_fp(mp3_fp)
     return mp3_fp.getvalue()
