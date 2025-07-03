@@ -8,7 +8,7 @@ st.title("Audioquiz – twintig vragen op een rij")
 
 def create_tts_mp3(text):
     mp3_fp = io.BytesIO()
-    tts = gTTS(text=text, lang='nl-be')
+    tts = gTTS(text=text, lang='nl', slow=true)
     tts.write_to_fp(mp3_fp)
     return mp3_fp.getvalue()
 
