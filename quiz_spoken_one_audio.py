@@ -33,4 +33,3 @@ if st.button("Start quiz"):
         combined_mp3 += vraag_audio + herhaal + vraag_audio + antwoord_audio + volgende
 
     st.audio(io.BytesIO(combined_mp3), format="audio/mp3")
-    st.download_button("Download mp3", data=combined_mp3, file_name="quiz.mp3", mime="audio/mpeg")
