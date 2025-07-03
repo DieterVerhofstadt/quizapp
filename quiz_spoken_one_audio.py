@@ -13,11 +13,6 @@ def create_tts_mp3(text):
     tts = gTTS(text=text, lang='nl')
     tts.write_to_fp(mp3_fp)
     return mp3_fp.getvalue()
-
-def herhaal():
-    # Simuleer stilte met herhaling van "uh"
-    text = "Ik herhaal:"
-    return create_tts_mp3(text)
     
 if st.button("Start quiz"):
     with open('vragen.csv', newline='', encoding='utf-8') as csvfile:
