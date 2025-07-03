@@ -16,7 +16,7 @@ def pauze():
     mp3_fp = io.BytesIO()
     tts = gTTS("¤", lang='fr') 
     tts.write_to_fp(mp3_fp)
-    return 12*mp3_fp.getvalue()
+    return 15*mp3_fp.getvalue()
 
 
 if st.button("Start quiz"):
