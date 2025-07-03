@@ -14,9 +14,9 @@ def create_tts_mp3(text):
 
 def pauze():
     mp3_fp = io.BytesIO()
-    tts = gTTS("¤¤¤¤¤", lang='fr') 
+    tts = gTTS("¤", lang='fr') 
     tts.write_to_fp(mp3_fp)
-    return mp3_fp.getvalue()
+    return 12*mp3_fp.getvalue()
 
 
 if st.button("Start quiz"):
@@ -35,6 +35,6 @@ if st.button("Start quiz"):
         pauze_audio = pauze()
         antwoord_audio = create_tts_mp3(antwoord)
         volgende = create_tts_mp3("Volgende vraag")
-        combined_mp3 += vraag_audio + 12* pauze_audio + antwoord_audio + volgende
+        combined_mp3 += vraag_audio + pauze_audio + antwoord_audio + volgende
 
     st.audio(io.BytesIO(combined_mp3), format="audio/mp3")
