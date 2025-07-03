@@ -4,7 +4,7 @@ from gtts import gTTS
 import streamlit as st
 import io
 
-st.title("Audioquiz – tien vragen op een rij")
+st.title("Audioquiz – twintig vragen op een rij")
 
 def create_tts_mp3(text):
     mp3_fp = io.BytesIO()
@@ -24,11 +24,11 @@ if st.button("Start quiz"):
         reader = csv.DictReader(csvfile)
         vragenlijst = list(reader)
 
-    random_10_vragen = random.sample(vragenlijst, 10)
+    random_20_vragen = random.sample(vragenlijst, 20)
 
     combined_mp3 = b""
 
-    for rij in random_10_vragen:
+    for rij in random_20_vragen:
         vraag = rij['vraag']
         antwoord = rij['antwoord']
         vraag_audio = create_tts_mp3(vraag)
