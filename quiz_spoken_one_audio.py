@@ -14,8 +14,12 @@ def create_tts_mp3(text):
     tts.write_to_fp(mp3_fp)
     return mp3_fp.getvalue()
 
-pauze = '<speak>Pauze<break time="5000ms"/>, Einde pauxe.</speak>'  
-pauze_audio = gTTS(text=pauze, lang='nl', tld='com') 
+def pauze()
+    pauze = '<speak>Pauze<break time="5000ms"/>, Einde pauxe.</speak>'  
+    tts = gTTS(text=pauze, lang='nl', tld='com') 
+    tts.write_to_fp(mp3_fp)
+    return mp3_fp.getvalue()
+
 
 if st.button("Start quiz"):
     with open('vragen.csv', newline='', encoding='utf-8') as csvfile:
@@ -30,9 +34,9 @@ if st.button("Start quiz"):
         vraag = rij['vraag']
         antwoord = rij['antwoord']
         vraag_audio = create_tts_mp3(vraag)
-        herhaal = create_tts_mp3("Ik herhaal")
+        pauze_audio = pauze()
         antwoord_audio = create_tts_mp3(antwoord)
         volgende = create_tts_mp3("Volgende vraag")
-        combined_mp3 += vraag_audio + pauze_audio + vraag_audio + antwoord_audio + volgende
+        combined_mp3 += vraag_audio + pauze_audio + antwoord_audio + volgende
 
     st.audio(io.BytesIO(combined_mp3), format="audio/mp3")
