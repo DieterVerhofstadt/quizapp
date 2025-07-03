@@ -24,3 +24,5 @@ Nice to haves:
 - having my own voice reading them
 - have it published to a wide audience
 - have an app per trivia topic, or activate a topic in the app
+- users can feed their own questions
+- you can start and stop the app with speech yourself
