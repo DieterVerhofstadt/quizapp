@@ -4,7 +4,7 @@ from gtts import gTTS
 import streamlit as st
 import io
 
-st.title("Audioquiz – twintig vragen op een rij")
+st.title("Kies je onderwerp en krijg 20 vragen")
 
 def create_tts_mp3(text):
     mp3_fp = io.BytesIO()
