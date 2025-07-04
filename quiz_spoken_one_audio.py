@@ -38,6 +38,6 @@ def create_one_mp3_quiz(vragen):
 
     return st.audio(io.BytesIO(combined_mp3), format="audio/mp3")
 if st.button("Wetenschap"):
-    create_one_mp3_quiz(wetenschap.csv)
+    create_one_mp3_quiz('wetenschap.csv')
 elif st.button("Presidenten"):
-    create_one_mp3_quiz(presidenten.csv)
+    create_one_mp3_quiz('presidenten.csv')
