@@ -4,7 +4,8 @@ from gtts import gTTS
 import streamlit as st
 import io
 
-st.title("Kies je onderwerp en krijg 20 vragen")
+st.title("Audioquiz")
+print("Kies je onderwerp. De app bouwt een mp3 met 20 vragen, random gekozen uit een vragenlijst over het onderwerp, die je kan afspelen. Als je hetzelfde onderwerp nog eens kiest, krijg je opnieuw 20 random vragen, dus misschien soms dezelfde.")
 
 def create_tts_mp3(text):
     mp3_fp = io.BytesIO()
