@@ -41,3 +41,11 @@ if st.button("Wetenschap"):
     create_one_mp3_quiz('wetenschap.csv')
 elif st.button("Presidenten"):
     create_one_mp3_quiz('presidenten.csv')
+elif st.button("Hoofdsteden van de wereld"):
+    create_one_mp3_quiz('hoofdsteden.csv')
+elif st.button("Wereldkampioenen F1"):
+    create_one_mp3_quiz('formule1.csv')
+elif st.button("Nobelprijswinnaars literatuur"):
+    create_one_mp3_quiz('nobelprijsliteratuur.csv')
+elif st.button("Winnaars Ronde van Frankrijk"):
+    create_one_mp3_quiz('tourdefrance.csv')
