@@ -18,9 +18,8 @@ def pauze():
     tts.write_to_fp(mp3_fp)
     return 15*mp3_fp.getvalue()
 
-
-if st.button("Start quiz"):
-    with open('vragen.csv', newline='', encoding='utf-8') as csvfile:
+def create_one_mp3_quiz(vragen)
+    with open(vragen, newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         vragenlijst = list(reader)
 
@@ -37,4 +36,8 @@ if st.button("Start quiz"):
         volgende = create_tts_mp3("Volgende vraag")
         combined_mp3 += vraag_audio + pauze_audio + antwoord_audio + volgende
 
-    st.audio(io.BytesIO(combined_mp3), format="audio/mp3")
+    return st.audio(io.BytesIO(combined_mp3), format="audio/mp3")
+if st.button("Wetenschap"):
+    create_one_mp3_quiz(wetenschap.csv)
+else if  st.button("Presidenten")
+    create_one_mp3_quiz(presidenten.csv)
