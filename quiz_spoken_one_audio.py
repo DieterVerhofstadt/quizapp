@@ -18,7 +18,7 @@ def pauze():
     tts.write_to_fp(mp3_fp)
     return 15*mp3_fp.getvalue()
 
-def create_one_mp3_quiz(vragen)
+def create_one_mp3_quiz(vragen):
     with open(vragen, newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         vragenlijst = list(reader)
