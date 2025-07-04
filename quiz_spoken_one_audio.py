@@ -7,6 +7,11 @@ import io
 st.title("Audioquiz")
 st.write("Kies je onderwerp. De app bouwt een mp3 met 20 vragen, random gekozen uit een vragenlijst over het onderwerp, die je kan afspelen. Als je hetzelfde onderwerp nog eens kiest, krijg je opnieuw 20 random vragen, dus misschien soms dezelfde.")
 
+if 'screen' not in st.session_state:
+    st.session_state.screen = 'home'
+def go_to_home():
+    st.session_state.screen = 'home'
+
 def create_tts_mp3(text):
     mp3_fp = io.BytesIO()
     tts = gTTS(text=text, lang='nl', slow=True)
@@ -40,13 +45,31 @@ def create_one_mp3_quiz(vragen):
     return st.audio(io.BytesIO(combined_mp3), format="audio/mp3")
 if st.button("Wetenschap"):
     create_one_mp3_quiz('wetenschap.csv')
+     st.session_state.screen == 'player':
+    if st.button("Terug naar start"):
+        go_to_home()
 elif st.button("Presidenten"):
     create_one_mp3_quiz('presidenten.csv')
+     st.session_state.screen == 'player':
+    if st.button("Terug naar start"):
+        go_to_home()
 elif st.button("Hoofdsteden van de wereld"):
     create_one_mp3_quiz('hoofdsteden.csv')
+     st.session_state.screen == 'player':
+    if st.button("Terug naar start"):
+        go_to_home()
 elif st.button("Wereldkampioenen F1"):
     create_one_mp3_quiz('formule1.csv')
+     st.session_state.screen == 'player':
+    if st.button("Terug naar start"):
+        go_to_home()
 elif st.button("Nobelprijswinnaars literatuur"):
     create_one_mp3_quiz('nobelprijsliteratuur.csv')
+     st.session_state.screen == 'player':
+    if st.button("Terug naar start"):
+        go_to_home()
 elif st.button("Winnaars Ronde van Frankrijk"):
     create_one_mp3_quiz('tourdefrance.csv')
+    st.session_state.screen == 'player':
+    if st.button("Terug naar start"):
+        go_to_home()
