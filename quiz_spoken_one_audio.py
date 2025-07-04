@@ -55,5 +55,5 @@ elif st.button("Nobelprijswinnaars literatuur"):
     create_one_mp3_quiz('nobelprijsliteratuur.csv')
 elif st.button("Winnaars Ronde van Frankrijk"):
     create_one_mp3_quiz('tourdefrance.csv')
-if st.button("Terug naar start"):
-    go_to_home()
+    if st.button("Terug naar start"):
+        go_to_home()
