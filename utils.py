@@ -1,3 +1,4 @@
+from gtts import gTTS
 def create_tts_mp3(text):
     mp3_fp = io.BytesIO()
     tts = gTTS(text=text, lang='nl', slow=True)
