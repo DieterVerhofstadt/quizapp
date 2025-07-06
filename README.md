@@ -7,13 +7,15 @@ This project has the main goal of building an app that I can use myself, specifi
 Key features are:
 - the randomization (else I will remember the sequence of answers)
 - the automatic queue (else I have to manipulate my device while driving)
+
+Way of working:  
 I built the application as a "vibe coding" experiment, following instructions by ChatGPT. I have a fair understanding of the end result but I have a hard time debugging or improving.
 
 Structure:
-- The source file is "vragenENG.csv" which contains all questions and answers with "vraag,antwoord" as the key value pair.
-- The main program is (currently) quiz_spoken.py
+- The source filez are csv files per category containing a number of questions and answers with "vraag,antwoord" as the key value pair.
+- The main program is (currently) quiz_spoken_one_audio.py
 - Two auxiliary files are config.toml and requirements.txt
-- there are other files with questions in Dutch or different approaches to the main program
+- there are other files with questions in English or different approaches to the main program
 
 Problems:
 - the first version of the app does not queue the questions but puts clickable mp3s into the browser; after some investigation, it turned out that streamlit.clout doesn't support an automatic queue of generated audio; I changed the program to produce 1 mp3 of a randomized order of the questions
