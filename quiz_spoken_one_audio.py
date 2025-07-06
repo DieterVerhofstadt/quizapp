@@ -1,6 +1,5 @@
 import csv
 import random
-from gtts import gTTS
 from utils import create_tts_mp3(text)
 from utils import pauze()
 import streamlit as st
