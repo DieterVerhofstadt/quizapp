@@ -1,6 +1,8 @@
 import csv
 import random
 from gtts import gTTS
+from utils import create_tts_mp3(text)
+from utils import pauze()
 import streamlit as st
 import io
 
@@ -12,17 +14,6 @@ if 'screen' not in st.session_state:
 def go_to_home():
     st.session_state.screen = 'home'
 
-def create_tts_mp3(text):
-    mp3_fp = io.BytesIO()
-    tts = gTTS(text=text, lang='nl', slow=True)
-    tts.write_to_fp(mp3_fp)
-    return mp3_fp.getvalue()
-
-def pauze():
-    mp3_fp = io.BytesIO()
-    tts = gTTS("¤", lang='fr') 
-    tts.write_to_fp(mp3_fp)
-    return 15*mp3_fp.getvalue()
 
 def create_one_mp3_quiz(vragen):
     with open(vragen, newline='', encoding='utf-8') as csvfile:
