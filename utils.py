@@ -6,8 +6,8 @@ def create_tts_mp3(text):
     tts.write_to_fp(mp3_fp)
     return mp3_fp.getvalue()
 
-def pauze():
+def pauze(number):
     mp3_fp = io.BytesIO()
     tts = gTTS("¤", lang='fr') 
     tts.write_to_fp(mp3_fp)
-    return 15*mp3_fp.getvalue()
+    return number*mp3_fp.getvalue()
