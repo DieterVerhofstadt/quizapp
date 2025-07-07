@@ -16,10 +16,7 @@ def pauze(number):
     return number*mp3_fp.getvalue()
 
 def create_eleven_mp3(text, voice, model):
-    """
-    Genereert een mp3-bestand met TTS via ElevenLabs.
-    Geeft een BytesIO stream terug die je direct in Streamlit kan gebruiken.
-    """
+	try: 	
     audio = generate(
         text=text,
         voice=voice,
@@ -28,3 +25,6 @@ def create_eleven_mp3(text, voice, model):
     )
     mp3_fp = io.BytesIO(audio)  # audio is al mp3-bytestream
     return mp3_fp
+  except Exception as e:
+        st.error(f"Er ging iets mis met ElevenLabs: {e}")
+        return None
