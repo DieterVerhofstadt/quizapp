@@ -39,28 +39,28 @@ def create_one_mp3_quiz(vragen):
 
 with col1: 
     if st.button("Wetenschap"):
-        create_one_mp3_quiz('wetenschap.csv')
+        create_one_mp3_quiz(csv/'wetenschap.csv')
         if st.button("Terug naar start"):
             go_to_home()
     elif st.button("Presidenten"):
-        create_one_mp3_quiz('presidenten.csv')
+        create_one_mp3_quiz(csv/'presidenten.csv')
         if st.button("Terug naar start"):
             go_to_home()
     elif st.button("Hoofdsteden van de wereld"):
-        create_one_mp3_quiz('hoofdsteden.csv')
+        create_one_mp3_quiz(csv/'hoofdsteden.csv')
         if st.button("Terug naar start"):
             go_to_home()
 
 with col2:    
     if st.button("Wereldkampioenen F1"):
-        create_one_mp3_quiz('formule1.csv')
+        create_one_mp3_quiz(csv/'formule1.csv')
         if st.button("Terug naar start"):
             go_to_home()
     elif st.button("Nobelprijswinnaars literatuur"):
-        create_one_mp3_quiz('nobelprijsliteratuur.csv')
+        create_one_mp3_quiz('csv/nobelprijsliteratuur.csv')
         if st.button("Terug naar start"):
             go_to_home()
     elif st.button("Winnaars Ronde van Frankrijk"):
-        create_one_mp3_quiz('tourdefrance.csv')
+        create_one_mp3_quiz(csv/'tourdefrance.csv')
         if st.button("Terug naar start"):
             go_to_home()
