@@ -6,7 +6,7 @@ import os
 
 def create_tts_mp3(text):
     mp3_fp = io.BytesIO()
-    tts = gTTS(text=text, lang='nl', slow=True)
+    tts = gTTS(text=text, lang='nl', slow=False)
     tts.write_to_fp(mp3_fp)
     return mp3_fp.getvalue()
     
