@@ -18,7 +18,7 @@ def pauze(number):
 
 def merge_csv():
     # Pad naar de map met CSV-bestanden
-    map_pad = "/csv"
+    map_pad = "csv"
     # Alle CSV-bestanden in de map vinden
     alle_bestanden = [f for f in os.listdir(map_pad) if f.endswith('.csv')]
     # Lege lijst om alle dataframes op te slaan
@@ -30,4 +30,4 @@ def merge_csv():
     # Alle dataframes samenvoegen
     samengevoegd_df = pd.concat(dataframes, ignore_index=True)
     # Resultaat opslaan naar een nieuwe CSV
-    samengevoegd_df.to_csv("/csv/samengevoegd.csv", index=False)
+    samengevoegd_df.to_csv("csv/samengevoegd.csv", index=False)
