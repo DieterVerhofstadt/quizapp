@@ -8,14 +8,15 @@ client = ElevenLabs(
 )
 
 def create_eleven_mp3(text, voice, model):
-    audio = client.text_to_speech.convert(
+    audio_generator = client.text_to_speech.convert(
         text=text,
         voice_id=voice,
         model_id=model,
-        output_format="mp3_44100_128",  # specificeer expliciet mp3
-        stream = False
+        output_format="mp3_44100_128",
     )
-    return io.BytesIO(audio)
+    # Combineer alle stukjes in één bytes-object
+    audio_bytes = b"".join(chunk for chunk in audio_generator)
+    return io.BytesIO(audio_bytes)
 
 if st.button("Einde"):
     audio_bytes = create_eleven_mp3('Leuk dat je deze quiz gespeeld hebt', voice="Rachel", model="eleven_monolingual_v1")
