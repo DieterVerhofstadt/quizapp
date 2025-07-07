@@ -1,10 +1,16 @@
 import streamlit as st
 import io
-from elevenlabs import generate, play, save, set_api_key
-set_api_key(st.secrets["elevenlabs"]["api_key"])
+
+from elevenlabs.client import ElevenLabs
+
+client = ElevenLabs(
+    api_key=st.secrets["elevenlabs"]["api_key"]
+)
+
+
 
 def create_eleven_mp3(text, voice, model):
-    audio = generate(
+    audio = client.generate(
         text=text,
         voice=voice,
 	model=model,
