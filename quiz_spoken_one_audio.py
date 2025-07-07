@@ -33,7 +33,7 @@ def create_one_mp3_quiz(vragen):
         pauze_na_vraag_audio = pauze(15)
         antwoord_audio = create_tts_mp3(antwoord)
         pauze_na_antwoord_audio = pauze(5)
-        combined_mp3 += vraag_audio + pauze_audio + antwoord_audio + pauze_audio
+        combined_mp3 += vraag_audio + pauze_na_vraag_audio + antwoord_audio + pauze_na_antwoord_audio
 
     return st.audio(io.BytesIO(combined_mp3), format="audio/mp3")
 
