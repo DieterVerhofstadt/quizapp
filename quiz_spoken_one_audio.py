@@ -5,6 +5,8 @@ from utils import pauze()
 import streamlit as st
 import io
 
+
+
 st.title("Audioquiz")
 st.write("Kies je onderwerp. De app bouwt een mp3 met 20 vragen, random gekozen uit een vragenlijst over het onderwerp, die je kan afspelen. Als je hetzelfde onderwerp nog eens kiest, krijg je opnieuw 20 random vragen, dus misschien soms dezelfde.")
 
@@ -13,6 +15,7 @@ if 'screen' not in st.session_state:
 def go_to_home():
     st.session_state.screen = 'home'
 
+col1, col2 = st.columns(3)
 
 def create_one_mp3_quiz(vragen):
     with open(vragen, newline='', encoding='utf-8') as csvfile:
@@ -33,6 +36,9 @@ def create_one_mp3_quiz(vragen):
         combined_mp3 += vraag_audio + pauze_audio + antwoord_audio + volgende
 
     return st.audio(io.BytesIO(combined_mp3), format="audio/mp3")
+
+with col1:
+    
 if st.button("Wetenschap"):
     create_one_mp3_quiz('wetenschap.csv')
     if st.button("Terug naar start"):
@@ -45,6 +51,8 @@ elif st.button("Hoofdsteden van de wereld"):
     create_one_mp3_quiz('hoofdsteden.csv')
     if st.button("Terug naar start"):
         go_to_home()
+
+with col2:    
 elif st.button("Wereldkampioenen F1"):
     create_one_mp3_quiz('formule1.csv')
     if st.button("Terug naar start"):
