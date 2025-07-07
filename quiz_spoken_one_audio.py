@@ -15,7 +15,7 @@ if 'screen' not in st.session_state:
 def go_to_home():
     st.session_state.screen = 'home'
 
-col1, col2 = st.columns(3)
+col1, col2 = st.columns(2)
 
 def create_one_mp3_quiz(vragen):
     with open(vragen, newline='', encoding='utf-8') as csvfile:
