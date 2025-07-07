@@ -43,7 +43,7 @@ with col1:
         if st.button("Terug naar start"):
             go_to_home()
     elif st.button("Presidenten"):
-        create_one_mp3_quiz(csv/presidenten.csv')
+        create_one_mp3_quiz('csv/presidenten.csv')
         if st.button("Terug naar start"):
             go_to_home()
     elif st.button("Hoofdsteden van de wereld"):
