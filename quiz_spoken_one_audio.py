@@ -5,8 +5,6 @@ from utils import pauze
 import streamlit as st
 import io
 
-
-
 st.title("Audioquiz")
 st.write("Kies je onderwerp. De app bouwt een mp3 met 20 vragen, random gekozen uit een vragenlijst over het onderwerp, die je kan afspelen. Als je hetzelfde onderwerp nog eens kiest, krijg je opnieuw 20 random vragen, dus misschien soms dezelfde.")
 
