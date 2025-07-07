@@ -64,5 +64,5 @@ with col2:
         if st.button("Terug naar start"):
             go_to_home()
 
-if st.button("Einde"):
-    create_eleven_mp3('Leuk dat je deze quiz gespeeld hebt', voice="Tijs", model="eleven_monolingual_v1")
+#if st.button("Einde"):
+    #create_eleven_mp3('Leuk dat je deze quiz gespeeld hebt', voice="Tijs", model="eleven_monolingual_v1")
