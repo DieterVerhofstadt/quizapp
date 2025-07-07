@@ -18,7 +18,7 @@ def pauze(number):
     tts.write_to_fp(mp3_fp)
     return number*mp3_fp.getvalue()
 
-def create_eleven_mp3(text, voice, model):
+# def create_eleven_mp3(text, voice, model):
 	try: 	
     audio = generate(
         text=text,
