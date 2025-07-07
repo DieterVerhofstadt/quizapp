@@ -52,7 +52,7 @@ with col1:
             go_to_home()
 
 with col2:    
-    elif st.button("Wereldkampioenen F1"):
+    if st.button("Wereldkampioenen F1"):
         create_one_mp3_quiz('formule1.csv')
         if st.button("Terug naar start"):
             go_to_home()
