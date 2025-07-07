@@ -13,6 +13,7 @@ def create_eleven_mp3(text, voice, model):
         voice_id=voice,
         model_id=model,
         output_format="mp3_44100_128",  # specificeer expliciet mp3
+        stream = False
     )
     return io.BytesIO(audio)
 
