@@ -1,7 +1,7 @@
 import io
 from gtts import gTTS
-from elevenlabs import generate, play, save, set_api_key
-set_api_key(st.secrets["elevenlabs"]["api_key"])
+#from elevenlabs import generate, play, save, set_api_key
+#set_api_key(st.secrets["elevenlabs"]["api_key"])
 
 def create_tts_mp3(text):
     try:
