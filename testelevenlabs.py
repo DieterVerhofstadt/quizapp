@@ -7,7 +7,7 @@ def create_eleven_mp3(text, voice, model):
     audio = generate(
         text=text,
         voice=voice,
-	model=model
+	model=model,
         stream=False  # stream=True geeft een generator, stream=False geeft bytes
     )
     mp3_fp = io.BytesIO(audio)  # audio is al mp3-bytestream
