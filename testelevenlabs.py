@@ -1,3 +1,4 @@
+import streamblabs as st
 import io
 from elevenlabs import generate, play, save, set_api_key
 set_api_key(st.secrets["elevenlabs"]["api_key"])
