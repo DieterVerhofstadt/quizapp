@@ -37,31 +37,30 @@ def create_one_mp3_quiz(vragen):
 
     return st.audio(io.BytesIO(combined_mp3), format="audio/mp3")
 
-with col1:
-    
-if st.button("Wetenschap"):
-    create_one_mp3_quiz('wetenschap.csv')
-    if st.button("Terug naar start"):
-        go_to_home()
-elif st.button("Presidenten"):
-    create_one_mp3_quiz('presidenten.csv')
-    if st.button("Terug naar start"):
-        go_to_home()
-elif st.button("Hoofdsteden van de wereld"):
-    create_one_mp3_quiz('hoofdsteden.csv')
-    if st.button("Terug naar start"):
-        go_to_home()
+with col1: 
+    if st.button("Wetenschap"):
+        create_one_mp3_quiz('wetenschap.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
+    elif st.button("Presidenten"):
+        create_one_mp3_quiz('presidenten.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
+    elif st.button("Hoofdsteden van de wereld"):
+        create_one_mp3_quiz('hoofdsteden.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
 
 with col2:    
-elif st.button("Wereldkampioenen F1"):
-    create_one_mp3_quiz('formule1.csv')
-    if st.button("Terug naar start"):
-        go_to_home()
-elif st.button("Nobelprijswinnaars literatuur"):
-    create_one_mp3_quiz('nobelprijsliteratuur.csv')
-    if st.button("Terug naar start"):
-        go_to_home()
-elif st.button("Winnaars Ronde van Frankrijk"):
-    create_one_mp3_quiz('tourdefrance.csv')
-    if st.button("Terug naar start"):
-        go_to_home()
+    elif st.button("Wereldkampioenen F1"):
+        create_one_mp3_quiz('formule1.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
+    elif st.button("Nobelprijswinnaars literatuur"):
+        create_one_mp3_quiz('nobelprijsliteratuur.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
+    elif st.button("Winnaars Ronde van Frankrijk"):
+        create_one_mp3_quiz('tourdefrance.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
