@@ -2,6 +2,7 @@ import csv
 import random
 from utils import create_tts_mp3
 from utils import pauze
+from utils import merge_csv
 import streamlit as st
 import io
 
@@ -60,6 +61,11 @@ with col2:
             go_to_home()
     elif st.button("Winnaars Ronde van Frankrijk"):
         create_one_mp3_quiz('csv/tourdefrance.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
+    elif st.button("Alles door elkaar"):
+        merge_csv()
+        create_one_mp3_quiz('csv/samengesteld.csv')
         if st.button("Terug naar start"):
             go_to_home()
 
