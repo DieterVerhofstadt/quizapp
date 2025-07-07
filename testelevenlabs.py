@@ -7,10 +7,8 @@ client = ElevenLabs(
     api_key=st.secrets["elevenlabs"]["api_key"]
 )
 
-
-
 def create_eleven_mp3(text, voice, model):
-    audio = client.generate(
+    audio = client.text_to_speech.convert(
         text=text,
         voice=voice,
 	model=model,
