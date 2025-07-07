@@ -49,7 +49,7 @@ with col1:
         create_one_mp3_quiz('csv/hoofdsteden.csv')
         if st.button("Terug naar start"):
             go_to_home()
-    elif st.button("Romeinse keuzers"):
+    elif st.button("Romeinse keizers"):
         create_one_mp3_quiz('csv/romeinse_keizers.csv')
         if st.button("Terug naar start"):
             go_to_home()
