@@ -19,5 +19,5 @@ def create_eleven_mp3(text, voice, model):
     return io.BytesIO(audio_bytes)
 
 if st.button("Einde"):
-    audio_bytes = create_eleven_mp3('Leuk dat je deze quiz gespeeld hebt', voice="YgjXqgzBJa9op0K278OW", model="eleven_monolingual_v1")
+    audio_bytes = create_eleven_mp3('Thank you for playing this quiz', voice="JBFqnCBsd6RMkjVDRZzb", model="eleven_monolingual_v1")
     st.audio(audio_bytes, format="audio/mp3")
