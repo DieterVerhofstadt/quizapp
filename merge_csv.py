@@ -19,4 +19,4 @@ for bestand in alle_bestanden:
 samengevoegd_df = pd.concat(dataframes, ignore_index=True)
 
 # Resultaat opslaan naar een nieuwe CSV
-samengevoegd_df.to_csv("samengevoegd.csv", index=False)
+samengevoegd_df.to_csv("/csv/samengevoegd.csv", index=False)
