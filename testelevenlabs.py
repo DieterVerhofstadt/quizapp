@@ -10,9 +10,8 @@ client = ElevenLabs(
 def create_eleven_mp3(text, voice, model):
     audio = client.text_to_speech.convert(
         text=text,
-        voice=voice,
+        voice_id=voice,
 	model=model,
-        stream=False  # stream=True geeft een generator, stream=False geeft bytes
     )
     mp3_fp = io.BytesIO(audio)  # audio is al mp3-bytestream
     return mp3_fp
