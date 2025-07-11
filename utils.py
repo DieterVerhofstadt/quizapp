@@ -28,8 +28,6 @@ def merge_csv():
         df = pd.read_csv(volledig_pad)
         dataframes.append(df)
 
-import requests
-
 def get_pages_from_category(category_name, limit=50):
     S = requests.Session()
     URL = "https://nl.wikipedia.org/w/api.php"
@@ -41,7 +39,6 @@ def get_pages_from_category(category_name, limit=50):
         "cmlimit": limit,
         "format": "json"
     }
-
     response = S.get(url=URL, params=params)
     data = response.json()
     return [item["title"] for item in data["query"]["categorymembers"]]
@@ -50,7 +47,6 @@ def get_summary(title):
     safe_title = title.replace(" ", "_")
     url = f"https://nl.wikipedia.org/api/rest_v1/page/summary/{safe_title}"
     response = requests.get(url)
-    
     if response.status_code == 200:
         return response.json().get("extract")
     else:
