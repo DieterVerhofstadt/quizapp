@@ -5,6 +5,5 @@ pagina_titels = get_pages_from_category(categorie)
 if st.button("Go"):
     for titel in pagina_titels:
         samenvatting = get_summary(titel)
-        print(f"** {titel} **")
-        print(samenvatting)
-        print()
+        st.subheader(titel)
+        st.write(samenvatting)
