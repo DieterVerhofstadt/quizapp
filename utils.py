@@ -2,7 +2,7 @@ import io
 from gtts import gTTS
 import pandas as pd
 import os
-
+import requests
 
 def create_tts_mp3(text):
     mp3_fp = io.BytesIO()
@@ -27,7 +27,22 @@ def merge_csv():
         volledig_pad = os.path.join(map_pad, bestand)
         df = pd.read_csv(volledig_pad)
         dataframes.append(df)
-    # Alle dataframes samenvoegen
-    samengevoegd_df = pd.concat(dataframes, ignore_index=True)
-    # Resultaat opslaan naar een nieuwe CSV
-    samengevoegd_df.to_csv("csv/samengevoegd.csv", index=False)
+
+import requests
+
+def get_pages_from_category(category_name, limit=50):
+    S = requests.Session()
+    URL = "https://nl.wikipedia.org/w/api.php"
+    
+    params = {
+        "action": "query",
+        "list": "categorymembers",
+        "cmtitle": f"Categorie:{category_name}",
+        "cmlimit": limit,
+        "format": "json"
+    }
+
+    response = S.get(url=URL, params=params)
+    data = response.json()
+    return [item["title"] for item in data["query"]["categorymembers"]]
+
