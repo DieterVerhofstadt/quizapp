@@ -34,7 +34,7 @@ def create_one_mp3_quiz(vragen):
         pauze_na_antwoord_audio = pauze(5)
         combined_mp3 += vraag_audio + pauze_na_vraag_audio + antwoord_audio + pauze_na_antwoord_audio
 
-    return st.audio(io.BytesIO(combined_mp3), format="audio/mp3")
+    return st.audio(io.BytesIO(combined_mp3), format="audio/mpeg")
 
 with col1: 
     if st.button("Wetenschap"):
@@ -84,6 +84,7 @@ with col2:
         create_one_mp3_quiz('csv/samengevoegd.csv')
         if st.button("Terug naar start"):
             go_to_home()
+
 
 
 
