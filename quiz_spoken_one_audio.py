@@ -7,9 +7,9 @@ import streamlit as st
 import io
 
 st.title("Audioquiz")
-st.write("Kies je onderwerp. De app bouwt een mp3 met 20 vragen, random gekozen uit een vragenlijst over het onderwerp, die je kan afspelen. Als je hetzelfde onderwerp nog eens kiest, krijg je opnieuw 20 random vragen, dus misschien soms dezelfde. Je kan met de slider het aantal vragen aanpassen tussen 5 en 50.")
+st.write("Kies je onderwerp. De app bouwt een mp3 met een aantal vragen naar keuze, random gekozen uit een vragenlijst over het onderwerp, die je kan afspelen. Als je hetzelfde onderwerp nog eens kiest, krijg je opnieuw 20 random vragen, dus misschien soms dezelfde. Kies met de slider het aantal vragen.")
 
-aantal_vragen = st.slider("Hoeveel vragen wil je?", min_value=5, max_value=50, value=20, step=5)
+aantal_vragen = st.slider("Aantal vragen.", min_value=5, max_value=50, value=20, step=5)
 
 if 'screen' not in st.session_state:
     st.session_state.screen = 'home'
@@ -86,6 +86,7 @@ with col2:
         create_one_mp3_quiz('csv/samengevoegd.csv')
         if st.button("Terug naar start"):
             go_to_home()
+
 
 
 
