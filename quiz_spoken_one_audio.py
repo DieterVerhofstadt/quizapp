@@ -1,6 +1,6 @@
 import csv
 import random
-from utils import create_polly_mp3
+from utils import create_tts_mp3
 from utils import pauze
 from utils import merge_csv
 import streamlit as st
@@ -30,9 +30,9 @@ def create_one_mp3_quiz(vragen):
     for rij in random_vragen:
         vraag = rij['vraag']
         antwoord = rij['antwoord']
-        vraag_audio = create_polly_mp3(vraag)
+        vraag_audio = create_tts_mp3(vraag)
         pauze_na_vraag_audio = pauze(15)
-        antwoord_audio = create_polly_mp3(antwoord)
+        antwoord_audio = create_tts_mp3(antwoord)
         pauze_na_antwoord_audio = pauze(5)
         combined_mp3 += vraag_audio + pauze_na_vraag_audio + antwoord_audio + pauze_na_antwoord_audio
 
@@ -86,6 +86,7 @@ with col2:
         create_one_mp3_quiz('csv/samengevoegd.csv')
         if st.button("Terug naar start"):
             go_to_home()
+
 
 
 
