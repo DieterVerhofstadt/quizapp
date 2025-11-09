@@ -2,6 +2,7 @@ import io
 from gtts import gTTS
 import pandas as pd
 import os
+import boto3
 import requests
 
 def create_tts_mp3(text):
