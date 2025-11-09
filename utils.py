@@ -2,7 +2,6 @@ import io
 from gtts import gTTS
 import pandas as pd
 import os
-import boto3
 import requests
 
 def create_tts_mp3(text):
@@ -52,26 +51,3 @@ def get_summary(title):
         return response.json().get("extract")
     else:
         return None
-
-def create_polly_mp3(text):
-    """
-    Genereer Vlaamse spraak (Amazon Polly) als MP3-bytes.
-    voice: 'Lotte' (vrouw) of 'Arnaud' (man)
-    """
-    # Maak een Polly-client aan (veronderstelt dat je AWS-keys ingesteld zijn)
-    polly = boto3.client('polly', region_name='eu-west-1')  # Ierland-regio ondersteunt nl-BE
-
-    # Vraag de synthese aan
-    response = polly.synthesize_speech(
-        Text=text,
-        OutputFormat='mp3',
-        VoiceId='Lotte",
-        LanguageCode='nl-BE'  # belangrijk: Belgische variant
-    )
-
-    # Lees de audio-output
-    if "AudioStream" in response:
-        mp3_fp = io.BytesIO(response["AudioStream"].read())
-        return mp3_fp.getvalue()
-    else:
-        raise Exception("Geen audio ontvangen van Polly.")
