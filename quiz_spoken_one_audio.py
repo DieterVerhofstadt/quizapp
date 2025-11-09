@@ -1,6 +1,6 @@
 import csv
 import random
-from utils import create_tts_mp3
+from utils import create_polly_mp3
 from utils import pauze
 from utils import merge_csv
 import streamlit as st
@@ -86,6 +86,7 @@ with col2:
         create_one_mp3_quiz('csv/samengevoegd.csv')
         if st.button("Terug naar start"):
             go_to_home()
+
 
 
 
