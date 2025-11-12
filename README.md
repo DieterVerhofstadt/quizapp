@@ -1,4 +1,4 @@
-This project has the main goal of building an app that I can use myself, specifically when driving, as a way to rehearse trivia questions. What I want is
+This project has the main goal of building an app that I can use myself, specifically when cooking, running or driving, as a way to rehearse trivia questions. What I want is
 - an automatic queue of randomized questions
 - read out loud
 - with some time in between so I can think of the answer
@@ -12,19 +12,23 @@ Way of working:
 I built the application as a "vibe coding" experiment, following instructions by ChatGPT. I have a fair understanding of the end result but I have a hard time debugging or improving.
 
 Structure:
-- The source filez are csv files per category containing a number of questions and answers with "vraag,antwoord" as the key value pair.
+- The source files are csv files per category containing a number of questions and answers with "vraag,antwoord" as the key value pair.
 - The main program is (currently) quiz_spoken_one_audio.py
-- Two auxiliary files are config.toml and requirements.txt
-- there are other files with questions in English or different approaches to the main program
+- Two uxiliary files are config.toml and requirements.txt
+- I have moved a couple of reusable functions to utils.py
+- there are some other files with dead ends or attempts to have a different approach to the goal (getting questions out of wikipedia, and getting a different voice)
 
-Problems:
-- the first version of the app does not queue the questions but puts clickable mp3s into the browser; after some investigation, it turned out that streamlit.clout doesn't support an automatic queue of generated audio; I changed the program to produce 1 mp3 of a randomized order of the questions
-- the local program I have, quizvoorgelezenENG, does the queuing but on my laptop it doesn't activate Dutch text-to-speech
+Problems with the current functionality:
+- the main complaint I get from users is about the voice; it's the standard female "dutch dutch" voice in Google TTS. 
+Voices in "dutch belgian" exist but require an account, or are not generated real time, or both. I need to make the step to an API key (with Amazon Polly e.g.) but that will need to be secured. Anything that is payable I'm holding off for now, not out of frugality but fear of exploitation. , ofwel is het asynchroon (niet real-time). Even better would be to have my own voice encoded for reuse. This is possible with ElevenLabs but a project in its own right.
+- it might be better to have the questions transcribed once, store them in a db and then only do the random selection
+- my first implementation was a queue of transcribed questions, but iOS and Android are protected against unpredictable on the fly audio, so I had to resolve to the merge operation
+- the questions are not of the same quality: some are simply years and names, others have more context
 
-Nice to haves:
-- having a Dutch version
-- having my own voice reading them
-- have it published to a wide audience
-- have an app per trivia topic, or activate a topic in the app
-- users can feed their own questions
-- you can start and stop the app with speech yourself
+Ideas for functional improvements:
+
+- Answer the question vocally and have speech recognition into validation of the answer
+- Tailor the queue or the next iteration to the questions which were not answered correctly
+- Expose the app to a bigger audience, e.g. in an appstore
+- More categories and more questions per category. This is hard to maintain. I have experimented with a Wikipedia API but to no avail
+- Tap into OpenAI for questions
