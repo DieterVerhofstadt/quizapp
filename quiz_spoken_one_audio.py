@@ -77,8 +77,11 @@ with col2:
         if st.button("Terug naar start"):
             go_to_home()
     elif st.button("Chemische elementen"):
-        merge_csv()
         create_one_mp3_quiz('csv/chemische elementen.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
+    elif st.button("Geschiedenis"):
+        create_one_mp3_quiz('csv/geschiedenis.csv')
         if st.button("Terug naar start"):
             go_to_home()
     elif st.button("Alles door elkaar"):
@@ -86,6 +89,7 @@ with col2:
         create_one_mp3_quiz('csv/samengevoegd.csv')
         if st.button("Terug naar start"):
             go_to_home()
+
 
 
 
