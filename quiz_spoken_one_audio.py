@@ -43,26 +43,15 @@ with col1:
         create_one_mp3_quiz('csv/wetenschap.csv')
         if st.button("Terug naar start"):
             go_to_home()
-    elif st.button("Presidenten"):
-        create_one_mp3_quiz('csv/presidenten.csv')
-        if st.button("Terug naar start"):
-            go_to_home()
-    elif st.button("Hoofdsteden van de wereld"):
-        create_one_mp3_quiz('csv/hoofdsteden.csv')
-        if st.button("Terug naar start"):
-            go_to_home()
-    elif st.button("Romeinse keizers"):
-        create_one_mp3_quiz('csv/romeinse_keizers.csv')
-        if st.button("Terug naar start"):
-            go_to_home()
     elif st.button("Aardrijkskunde"):
         create_one_mp3_quiz('csv/aardrijkskunde.csv')
         if st.button("Terug naar start"):
-            go_to_home()        
-    elif st.button("Schaduw Red Michiel"):
-        create_one_mp3_quiz('csv/Schaduw Red Michiel.csv')
+            go_to_home() 
+    elif st.button("Geschiedenis"):
+        create_one_mp3_quiz('csv/geschiedenis.csv')
         if st.button("Terug naar start"):
-            go_to_home()      
+            go_to_home()
+     
 with col2:    
     if st.button("Wereldkampioenen F1"):
         create_one_mp3_quiz('csv/formule1.csv')
@@ -76,19 +65,35 @@ with col2:
         create_one_mp3_quiz('csv/tourdefrance.csv')
         if st.button("Terug naar start"):
             go_to_home()
-    elif st.button("Chemische elementen"):
+
+with col3: 
+    if st.button("Chemische elementen"):
         create_one_mp3_quiz('csv/chemische elementen.csv')
         if st.button("Terug naar start"):
             go_to_home()
-    elif st.button("Geschiedenis"):
-        create_one_mp3_quiz('csv/geschiedenis.csv')
+     elif st.button("Presidenten"):
+        create_one_mp3_quiz('csv/presidenten.csv')
         if st.button("Terug naar start"):
             go_to_home()
+    elif st.button("Hoofdsteden van de wereld"):
+        create_one_mp3_quiz('csv/hoofdsteden.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
+    elif st.button("Romeinse keizers"):
+        create_one_mp3_quiz('csv/romeinse_keizers.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
+with col4:             
+    if st.button("Schaduw Red Michiel"):
+        create_one_mp3_quiz('csv/Schaduw Red Michiel.csv')
+        if st.button("Terug naar start"):
+            go_to_home()         
     elif st.button("Alles door elkaar"):
         merge_csv()
         create_one_mp3_quiz('csv/samengevoegd.csv')
         if st.button("Terug naar start"):
             go_to_home()
+
 
 
 
