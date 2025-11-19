@@ -55,6 +55,14 @@ with col1:
         create_one_mp3_quiz('csv/sport.csv')
         if st.button("Terug naar start"):
             go_to_home()     
+    elif st.button("Kunst"):
+        create_one_mp3_quiz('csv/kunst.csv')
+        if st.button("Terug naar start"):
+            go_to_home() 
+    elif st.button("Literatuur"):
+        create_one_mp3_quiz('csv/literatuur.csv')
+        if st.button("Terug naar start"):
+            go_to_home()     
 with col2:    
     if st.button("Wereldkampioenen F1"):
         create_one_mp3_quiz('csv/formule1.csv')
@@ -68,9 +76,7 @@ with col2:
         create_one_mp3_quiz('csv/tourdefrance.csv')
         if st.button("Terug naar start"):
             go_to_home()
-
-with col3: 
-    if st.button("Chemische elementen"):
+    elif st.button("Chemische elementen"):
         create_one_mp3_quiz('csv/chemische elementen.csv')
         if st.button("Terug naar start"):
             go_to_home()
@@ -96,6 +102,7 @@ with col4:
         create_one_mp3_quiz('csv/samengevoegd.csv')
         if st.button("Terug naar start"):
             go_to_home()
+
 
 
 
