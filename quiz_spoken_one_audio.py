@@ -16,7 +16,7 @@ if 'screen' not in st.session_state:
 def go_to_home():
     st.session_state.screen = 'home'
 
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3 = st.columns(3)
 
 def create_one_mp3_quiz(vragen):
     with open(vragen, newline='', encoding='utf-8') as csvfile:
@@ -96,7 +96,7 @@ with col2:
         create_one_mp3_quiz('csv/romeinse_keizers.csv')
         if st.button("Terug naar start"):
             go_to_home()
-with col4:             
+with col3:             
     if st.button("Schaduw Red Michiel"):
         create_one_mp3_quiz('csv/Schaduw Red Michiel.csv')
         if st.button("Terug naar start"):
@@ -106,6 +106,7 @@ with col4:
         create_one_mp3_quiz('csv/samengevoegd.csv')
         if st.button("Terug naar start"):
             go_to_home()
+
 
 
 
