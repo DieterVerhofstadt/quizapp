@@ -66,7 +66,12 @@ with col1:
     elif st.button("Actua en personalia"):
         create_one_mp3_quiz('csv/actuapersonalia.csv')
         if st.button("Terug naar start"):
-            go_to_home()     
+            go_to_home()
+    elif st.button("Mythologie en religie"):
+        create_one_mp3_quiz('csv/mythologie.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
+
 with col2:    
     if st.button("Wereldkampioenen F1"):
         create_one_mp3_quiz('csv/formule1.csv')
@@ -84,7 +89,7 @@ with col2:
         create_one_mp3_quiz('csv/chemische elementen.csv')
         if st.button("Terug naar start"):
             go_to_home()
-    elif st.button("Presidenten"):
+    elif st.button("Presidenten van de VS"):
         create_one_mp3_quiz('csv/presidenten.csv')
         if st.button("Terug naar start"):
             go_to_home()
@@ -110,6 +115,7 @@ with col3:
         create_one_mp3_quiz('csv/samengevoegd.csv')
         if st.button("Terug naar start"):
             go_to_home()
+
 
 
 
