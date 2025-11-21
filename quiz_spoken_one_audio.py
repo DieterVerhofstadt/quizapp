@@ -63,6 +63,10 @@ with col1:
         create_one_mp3_quiz('csv/literatuur.csv')
         if st.button("Terug naar start"):
             go_to_home()     
+    elif st.button("Actua en personalia"):
+        create_one_mp3_quiz('csv/actuapersonalia.csv')
+        if st.button("Terug naar start"):
+            go_to_home()     
 with col2:    
     if st.button("Wereldkampioenen F1"):
         create_one_mp3_quiz('csv/formule1.csv')
@@ -102,6 +106,7 @@ with col4:
         create_one_mp3_quiz('csv/samengevoegd.csv')
         if st.button("Terug naar start"):
             go_to_home()
+
 
 
 
