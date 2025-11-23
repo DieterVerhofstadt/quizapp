@@ -106,7 +106,11 @@ with col3:
         create_one_mp3_quiz('csv/Schaduw Red Michiel.csv')
         if st.button("Terug naar start"):
             go_to_home()         
-    elif st.button("Schaduw Kwisspels"):
+    elif st.button("Schaduw Plaziet"):
+        create_one_mp3_quiz('csv/Schaduw Plaziet.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
+     elif st.button("Schaduw Kwisspels"):
         create_one_mp3_quiz('csv/kwisspels.csv')
         if st.button("Terug naar start"):
             go_to_home()
@@ -115,6 +119,7 @@ with col3:
         create_one_mp3_quiz('csv/samengevoegd.csv')
         if st.button("Terug naar start"):
             go_to_home()
+
 
 
 
