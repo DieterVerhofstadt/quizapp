@@ -118,11 +118,11 @@ with col3:
         create_one_mp3_quiz('csv/Schaduw SSGB.csv')
         if st.button("Terug naar start"):
             go_to_home()
-    elif st.button("Alles door elkaar"):
-        merge_csv()
-        create_one_mp3_quiz('csv/samengevoegd.csv')
+    elif st.button("Schaduw VanZwam"):
+        create_one_mp3_quiz('csv/Schaduw VanZwam.csv')
         if st.button("Terug naar start"):
             go_to_home()
+
 
 
 
