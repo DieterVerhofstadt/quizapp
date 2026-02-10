@@ -30,5 +30,4 @@ Ideas for functional improvements:
 - Answer the question vocally and have speech recognition into validation of the answer
 - Tailor the queue or the next iteration to the questions which were not answered correctly
 - Expose the app to a bigger audience, e.g. in an appstore
-- More categories and more questions per category. This is hard to maintain. I have experimented with a Wikipedia API but to no avail
-- Tap into OpenAI for questions
+- Tap into OpenAI for questions, although in my experience AI's "hallucination" is stronger when researching trivia than when aggregating intelligence, probably against common expectation.
