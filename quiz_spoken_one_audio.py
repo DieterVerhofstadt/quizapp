@@ -117,10 +117,12 @@ with col3:
     elif st.button("Schaduw SSGB"):
         create_one_mp3_quiz('csv/Schaduw SSGB.csv')
         if st.button("Terug naar start"):
+            go_to_home()
     elif st.button("Schaduw Incognito"):
         create_one_mp3_quiz('csv/Schaduw Incognito.csv')
         if st.button("Terug naar start"):
             go_to_home()
+
 
 
 
