@@ -93,8 +93,8 @@ with col2:
         create_one_mp3_quiz('csv/presidenten.csv')
         if st.button("Terug naar start"):
             go_to_home()
-    elif st.button("Hoofdsteden van de wereld"):
-        create_one_mp3_quiz('csv/hoofdsteden.csv')
+    elif st.button("Hoofdsteden moeilijk"):
+        create_one_mp3_quiz('csv/hoofdsteden moeilijk.csv')
         if st.button("Terug naar start"):
             go_to_home()
     elif st.button("Romeinse keizers"):
@@ -122,6 +122,7 @@ with col3:
         create_one_mp3_quiz('csv/Schaduw Incognito.csv')
         if st.button("Terug naar start"):
             go_to_home()
+
 
 
 
