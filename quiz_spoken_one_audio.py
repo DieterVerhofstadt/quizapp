@@ -122,6 +122,10 @@ with col3:
         create_one_mp3_quiz('csv/Schaduw Incognito.csv')
         if st.button("Terug naar start"):
             go_to_home()
+    elif st.button("Schaduw Wanhoop"):
+        create_one_mp3_quiz('csv/Schaduw Wanhoop.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
 
 
 
