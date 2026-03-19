@@ -75,7 +75,10 @@ with col1:
         create_one_mp3_quiz('csv/gastronomie.csv')
         if st.button("Terug naar start"):
             go_to_home()
-
+    elif st.button("Varia waaronder fauna en flora"):
+        create_one_mp3_quiz('csv/varia.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
 
 with col2:    
     if st.button("Wereldkampioenen F1"):
