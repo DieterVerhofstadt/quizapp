@@ -59,6 +59,10 @@ with col1:
         create_one_mp3_quiz('csv/kunst.csv')
         if st.button("Terug naar start"):
             go_to_home() 
+    elif st.button("F & F"):
+        create_one_mp3_quiz('csv/Fauna en flora.csv')
+        if st.button("Terug naar start"):
+            go_to_home() 
     elif st.button("Film en TV"):
         create_one_mp3_quiz('csv/Film en TV.csv')
         if st.button("Terug naar start"):
