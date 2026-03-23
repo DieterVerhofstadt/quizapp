@@ -60,11 +60,11 @@ with col1:
         if st.button("Terug naar start"):
             go_to_home() 
     elif st.button("F & F"):
-        create_one_mp3_quiz('csv/Fauna en flora.csv')
+        create_one_mp3_quiz('csv/fauna en flora.csv')
         if st.button("Terug naar start"):
             go_to_home() 
     elif st.button("Film en TV"):
-        create_one_mp3_quiz('csv/Film en TV.csv')
+        create_one_mp3_quiz('csv/film en tv.csv')
         if st.button("Terug naar start"):
             go_to_home()     
     elif st.button("Literatuur"):
