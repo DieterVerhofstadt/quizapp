@@ -154,6 +154,10 @@ with col3:
         create_one_mp3_quiz('csv/Schaduw Conoscenza.csv')
         if st.button("Terug naar start"):
             go_to_home()
+    elif st.button("Schaduw Da's zeker da"):
+        create_one_mp3_quiz('csv/Schaduw DasZekerDa.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
 
 
 
