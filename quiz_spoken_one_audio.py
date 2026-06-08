@@ -158,8 +158,8 @@ with col3:
         create_one_mp3_quiz('csv/Schaduw DasZekerDa.csv')
         if st.button("Terug naar start"):
             go_to_home()
-    elif st.button("The Entity"):
-        create_one_mp3_quiz('csv/Entity.csv')
+    elif st.button("Schaduw The Entity"):
+        create_one_mp3_quiz('csv/Schaduw Entity.csv')
         if st.button("Terug naar start"):
             go_to_home()
 
