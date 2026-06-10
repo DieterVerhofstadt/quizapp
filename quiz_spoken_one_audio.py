@@ -129,6 +129,10 @@ with col2:
         create_one_mp3_quiz('csv/Napoleon.csv')
         if st.button("Terug naar start"):
             go_to_home()
+    elif st.button("Basket en NBA"):
+        create_one_mp3_quiz('csv/Basket en NBA.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
 with col3:             
     if st.button("Schaduw Red Michiel"):
         create_one_mp3_quiz('csv/Schaduw Red Michiel.csv')
