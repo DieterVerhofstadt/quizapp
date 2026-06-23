@@ -170,7 +170,10 @@ with col3:
         create_one_mp3_quiz('csv/Schaduw DasZekerDa.csv')
         if st.button("Terug naar start"):
             go_to_home()
-
+    elif st.button("Schaduw Terug Naar Af"):
+        create_one_mp3_quiz('csv/Schaduw terugnaaraf.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
 
 
 
