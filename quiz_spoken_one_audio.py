@@ -174,6 +174,11 @@ with col3:
         create_one_mp3_quiz('csv/Schaduw terugnaaraf.csv')
         if st.button("Terug naar start"):
             go_to_home()
+    elif st.button("Schaduw Wodeismedoadde"):
+        create_one_mp3_quiz('csv/Wodeismedoadde.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
+
 
 
 
