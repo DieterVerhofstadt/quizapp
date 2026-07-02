@@ -178,6 +178,10 @@ with col3:
         create_one_mp3_quiz('csv/Wodeismedoadde.csv')
         if st.button("Terug naar start"):
             go_to_home()
+    elif st.button("Ondernemerstool"):
+        create_one_mp3_quiz('csv/Ondernemerstool.csv')
+        if st.button("Terug naar start"):
+            go_to_home()
 
 
 
