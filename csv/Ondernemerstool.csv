@@ -22,4 +22,5 @@ Hoe weet ik welke activiteiten de ondernemer moet kiezen? Die Nacebel-codes zijn
 Hoe weet het systeem welke formaliteiten de ondernemer moet vervullen?, De bevoegde autoriteiten houden die logica bij op basis van locatie en activiteit. We voorzien bijkomende vragen en antwoorden om verder te filteren.
 Voorzien we rollen en mandaten?, Momenteel niet. We kijken in het KBO of de gebuiker de juiste rol heeft in een bedrijf om de nodige handelingen te verrichten in onze toepassing.
 Is er authenticatie voorzien?, In P16c wel. Het CSAM/FAS protocol authenticeert de gebruiker en laat ons toe de nodige gegevens op te halen.
-Wat gebeurt er als de validatie door het ondernemingsloket niet gunstig is?, de gebruiker wordt daarvan ingelicht maar momenteel verhindert niets die gebruiker om een nieuwe poging te ondernemn
+Wat gebeurt er als de validatie door het ondernemingsloket niet gunstig is?, de gebruiker wordt daarvan ingelicht en de inactieve onderneming in he KBO zal de persoon verhinderen een nieuwe poging te ondernemen
+I
