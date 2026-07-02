@@ -1,6 +1,7 @@
 Vraag, Antwoord
 Wat is de langetermijnvisie van dit project?, Dat alle Europese burgers eenvoudig en digitaal een onderneming in België kunnen starten en beheren
 Waarom heet dit project P16?, Er zijn 21 dergelijke procedures die het leven van de Europese burger moeten vereenvoudigen. Een onderneming starten is procedure 16.
+Wat betekent P16c? En is er ook een a en een b?, P16c spitst zich toe op het starten van een onderneming. P16a gaat over professionele kwalificaties. P16b beperkt zich tot zetels van vennootschappen en ligt bij Justitie en de notarissen.
 Vanwaar komt het geld?, Deels van het interbestuurlijk fonds van de regio's en deels van Europa
 Wat is vandaag al mogelijk in de gereleasete toepassing?, Een eenmanszaak creëren met een eerste vestigingseenheid
 Wat is het verschil tussen een zetel en een vestiging?, Een zetel is het officiële adres van de eenmanszaak en voor een Belg gelijk aan diens domicilie. Een vestiging is de plaats waar de beroepsactiviteit effectief wordt uitgevoerd zoals een restaurant of winkel.
@@ -14,3 +15,11 @@ Ik had vroeger een eenmanszaak maar die is inactief. De toepassing ziet dit en v
 Ik wil geen eenmanszaak starten maar een vennootschap. Waarom kan dit niet in de applicatie?, Een zetel oprichten voor een vennootschap is in handen van justitie of een notaris. Vandaaruit zal men wel een vestiging kunnen creëren in onze toepassing net zoals voor eenmanszaken. Dit is ingepland voor januari 2027
 Is de kous af na het creëren van een zetel en een vestiging?, Zeker niet. Een belangrijke toegevoegde waarde is dat we de ondernemer tonen welke formaliteiten die moet vervullen om de gekozen activiteiten uit te voeren. Dit maken we mogelijk vanaf november.
 In de langetermijnvisie staat het woordje beheren maar momenteel gaat het enkel over starten. Wat is er anders aan opstarten versus beheren?, Voor een bestaande ondernemer is het nu al mogelijk bepaalde zaken te wijzigen in My Enterprise. Dit is een toepassing van FOD Economie die we naar eind volgend jaar willen integreren met de onze.
+Wat is het verschil tussen PSC en P16c?, PSC is het overkoepelende portaal waar de ondernemer in spe geïnformeerd wordt over alle mogelijkheden. P16c is een echte toepassing waarbij de gebruiker effectief een onderneming start.
+Hoe krijgt de gebruiker te weten dat de onderneming is gecreëerd in de kruispuntbank?, Het ondernemingsloket informeert de gebruiker. We overwegen ook om vanuit P16 een bericht te sturen naar de eBox Enterprise.
+Kan de ondernemer meerdere vestigingen openen voor een eenmanszaak of een vennootschap?, Wettelijk kan dat. Onze toepassing ondersteunt nu enkel de creatie van een eerste vestiging. Bijkomende vestiginen staan gepland begin 2027.
+Hoe weet ik welke activiteiten de ondernemer moet kiezen? Die Nacebel-codes zijn me toch een kluwen!, Vandaag voorzien we enkel een getrapte lijst met een zoekfunctie. In de toekomst willen we de gebruiker beter helpen bij de keuze.
+Hoe weet het systeem welke formaliteiten de ondernemer moet vervullen?, De bevoegde autoriteiten houden die logica bij op basis van locatie en activiteit. We voorzien bijkomende vragen en antwoorden om verder te filteren.
+Voorzien we rollen en mandaten?, Momenteel niet. We kijken in het KBO of de gebuiker de juiste rol heeft in een bedrijf om de nodige handelingen te verrichten in onze toepassing.
+Is er authenticatie voorzien?, In P16c wel. Het CSAM/FAS protocol authenticeert de gebruiker en laat ons toe de nodige gegevens op te halen.
+Wat gebeurt er als de validatie door het ondernemingsloket niet gunstig is?, de gebruiker wordt daarvan ingelicht maar momenteel verhindert niets die gebruiker om een nieuwe poging te ondernemn
